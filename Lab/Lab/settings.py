@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '*uj**&&v1h@9+8yggb&^yflr1+ehwfg1&vvl6kyh&j8mfa3i1y'
+SECRET_KEY = '76rep$p7zm7l$8@uch(casox_qu5n)bqy7*anb2x4egtj)k#g&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -62,7 +61,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'dbtestapp.apps.DbtestappConfig',
             ],
         },
     },
@@ -84,7 +82,6 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-
 
 
 # Password validation
