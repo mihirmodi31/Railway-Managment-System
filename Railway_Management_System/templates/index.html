@@ -1,4 +1,5 @@
-{% load static %}
+{% extends 'base.html' %}
+<!-- {% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,9 +31,9 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
                 <a href="#" class="nav-item nav-link active">Home</a>
-                <a href="#" class="nav-item nav-link">Profile</a>
-                <a href="#" class="nav-item nav-link">Messages</a>
-                <a href="#" class="nav-item nav-link" tabindex="-1">Reports</a>
+                <a href="aboutus" class="nav-item nav-link">About us</a>
+                <a href="project" class="nav-item nav-link">This Project</a>
+                <a href="feedback" class="nav-item nav-link" tabindex="-1">Feedback</a>
             </div>
             <div class="navbar-nav ml-auto">
                 <a href="login" class="fa fa-sign-in nav-item nav-link">&nbsp;Login</a>&nbsp;&nbsp;
@@ -55,4 +56,38 @@
     </footer>
 </div>
 </body>
-</html>
+</html> -->
+
+{% block content %}
+{% if user.is_authenticated %}
+{% csrf_token %}
+<div class="navbar-nav ml-auto">
+    <a href="../logout" class="fa fa-sign-out nav-item nav-link">&nbsp;Logout</a>&nbsp;&nbsp;
+</div>
+{% else %}
+<div class="navbar-nav ml-auto">
+    {% csrf_token %}
+    <a href="login" class="fa fa-sign-in nav-item nav-link">&nbsp;Login</a>&nbsp;&nbsp;
+    <a href="register" class="fa fa-user nav-item nav-link">&nbsp;Signup</a>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block body %}
+
+{% if user.is_authenticated %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <strong>Welcome,&nbsp;</strong>{{ message }}
+</div>
+{% endfor %}
+
+{% else %}
+<div class="container-fluid text-center">
+    <div class="gallery">
+        <img src="{% static 'images/home.jpg' %}" alt="Home" width="1300" height="600">
+    </div>
+</div>
+
+{% endif %}
+{% endblock %}

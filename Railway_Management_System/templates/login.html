@@ -331,6 +331,7 @@
 
         <!-- Login Form -->
         <form>
+          {% csrf_token %}
           <input type="text" id="login" class="fadeIn second" name="uname" placeholder="Username">
           <center><input type="password" id="password" class="fadeIn third" name="pswd"
               placeholder="*        password         *"></center>
