@@ -8,6 +8,39 @@
     <title>Payment</title>
 </head>
 <body>
-    
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        <div>
+            Bank :
+            <select name="bank" required>
+                <option value="SBI">SBI</option>
+                <option value="BOB">BOB</option>
+                <option value="HDFC">HDFC</option>
+                <option value="AXIS">AXIS</option>
+                <option value="ICICI">ICICI</option>
+            </select>
+
+        </div>
+
+        <div>
+            Account No:
+            <input type="number" id="acc" name="acc">
+        </div>
+
+        <div>
+            IFSC No:
+            <input type="text" id="ifsc" name="ifsc">
+        </div>
+
+        <div>
+            Amount:
+        </div>
+
+        <div class="buttons">
+            <button class="submit" name="confirm"> Confirm </button>
+        </div>
+
+    </form>
 </body>
 </html>

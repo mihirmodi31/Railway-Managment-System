@@ -7,7 +7,7 @@ def search(request):
         trains = request.POST['trains']
         date = request.POST['date']
         seats = request.POST['seats']
-        return render(request, "payment.html")
+        
+    return render(request, "search.html")
     
-    else
-        return render(request, "search.html")
+    
