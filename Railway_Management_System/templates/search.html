@@ -1,1 +1,51 @@
-<h1>Hello {{name}} </h1>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Train</title>
+</head>
+<body>
+    <form action="/search" method="POST">
+        {% csrf_token %}
+
+        <div class=search>
+
+            <h1>
+                Select Your Train 
+            </h1>
+            <select name="train" required>
+                <option value="Rajdhani Express">Rajdhani Express</option>
+                <option value="Duronto Express">Duronto Express</option>
+                <option value="Shatabdi Express">Shatabdi Express</option>
+                <option value="Sampark Kranti Express">Sampark Kranti Express</option>
+                <option value="Garib Rath Express">Garib Rath Express</option>
+                <option value="Humsafar Express">Humsafar Express</option>
+                <option value="Kavi Guru Express">Kavi Guru Express</option>
+                <option value="Vande Bharat Express">Vande Bharat Express</option>
+                <option value="Tejas Express">Tejas Express</option>
+                <option value="Vivek Express">Vivek Express</option>
+            </select>
+        </div>
+
+        <div class="date">
+            Date :
+            <input type="date" id="date" name="date">
+        </div>
+
+        <div class="seats">
+
+            Enter No. of Seats :
+            <input type="number" id="seats" name="seats">
+        </div>
+
+        <div class="buttons">
+            <button class="submit"> Submit </button>
+        </div>
+
+    </form>
+</body>
+</html>
