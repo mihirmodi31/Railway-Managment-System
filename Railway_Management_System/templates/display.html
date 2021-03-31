@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+{% csrf_token %}
+<div class="navbar-nav ml-auto">
+    <a href="../logout" class="fa fa-sign-out nav-item nav-link">&nbsp;Logout</a>&nbsp;&nbsp;
+</div>
+{% else %}
+<div class="navbar-nav ml-auto">
+    {% csrf_token %}
+    <a href="login" class="fa fa-sign-in nav-item nav-link">&nbsp;Login</a>&nbsp;&nbsp;
+    <a href="register" class="fa fa-user nav-item nav-link">&nbsp;Signup</a>
+</div>
+{% endif %}
+{% endblock %}
+
+source  = {{src}} <br>
+Destination = {{dst}} <br>
+date = {{date}} <br>
