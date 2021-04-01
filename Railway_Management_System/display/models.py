@@ -11,3 +11,4 @@ class Trains(models.Model):
     day = models.CharField(max_length=15)
     arrival = models.TimeField(auto_now=False, auto_now_add=False, blank=True)
     departure = models.TimeField(auto_now=False, auto_now_add=False, blank=True)
+    price = models.IntegerField()

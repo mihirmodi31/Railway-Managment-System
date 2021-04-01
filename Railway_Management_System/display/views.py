@@ -1,3 +1,4 @@
+from display.models import Trains
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
@@ -8,4 +9,6 @@ def display(request):
     destination = request.GET['dst']
     date = request.GET['dates']
 
-    return render(request, "display.html", {'src': source, 'dst': destination, 'date': date})
+    trains = Trains.objects.all()
+
+    return render(request, "display.html", {'trains' : trains, 'src' : source, 'dst' : destination})
