@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% if user.is_authenticated %}
+{% csrf_token %}
+<div class="navbar-nav ml-auto">
+    <a href="../logout" class="fa fa-sign-out nav-item nav-link">&nbsp;Logout</a>&nbsp;&nbsp;
+</div>
+{% else %}
+<div class="navbar-nav ml-auto">
+    {% csrf_token %}
+    <a href="login" class="fa fa-sign-in nav-item nav-link">&nbsp;Login</a>&nbsp;&nbsp;
+    <a href="register" class="fa fa-user nav-item nav-link">&nbsp;Signup</a>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block body %}
+<!-- {{age}}
+{{price}}
+{{no}}
+{{q}}
+{{dates}}
+{{tprice}} -->
+
+<!-- {% for train in trains %}
+    {{train.id}}
+    {% if train.pricesl is price or train.price2s is price %}
+        {{train.name}}
+    {% endif %}
+{% endfor %}  -->
+
+<!-- {{train1.name}} -->
+
+<center><h1><u>Your tickets</u></h1></center>
+<a><center><img src="{% static 'images/logo.png' %}" alt="LOGO"></center></a>
+
+<table align = "center">
+    <tr>
+        <td><b>Passangers : </b></td>
+        <td>&nbsp;{{q}}</td>
+    </tr>
+
+    <tr>
+        <td><b>Age : </b></td>
+        <td>&nbsp;{{age}}</td>
+    </tr>
+
+    <tr>
+        <td><b>Total Ticket : </b></td>
+        <td>&nbsp;{{no}}</td>
+    </tr>
+
+    <tr>
+        <td><b>Total Price : </b></td>
+        <td>&nbsp;{{tprice}}₹</td>
+    </tr>
+
+    <tr>
+        <td><b>Train : </b></td>
+        <td>&nbsp;{{train1.name}} ● {{train1.pnr}}</td>
+    </tr>
+
+    <tr>
+        <td><b>Arrival : </b></td>
+        <td>&nbsp;{{train1.arrival}} ● {{train1.source}}</td>
+    </tr>
+
+    <tr>
+        <td><b>Departure : </b></td>
+        <td>&nbsp;{{train1.departure}} ● {{train1.destination}}</td>
+    </tr>
+
+    <tr>
+        <td><b>Date : </b></td>
+        <td>&nbsp;{{dates}}</td>
+    </tr>
+</table>
+{% endblock %}

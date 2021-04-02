@@ -19,7 +19,8 @@
 Destination = {{dst}} <br>
 date = {{date}} <br> -->
 {% block body %}
-<form action="info.html"></form>
+<form >
+    {% csrf_token %}
 <table >
     <tr>
         <td>—————</td>
@@ -33,7 +34,7 @@ date = {{date}} <br> -->
             <td> <b>{{ train.pnr }}</b> </td> <td>
             <b>{{train.name}} </b>  </td>
             <td>●Runs on : {{train.day}}</td>
-            <td>|&nbsp;<b>SL</b>&nbsp;<input type = "radio" >&nbsp;{{train.price}}₹</td>
+            <td>|&nbsp;<b>SL</b>&nbsp;●&nbsp;{{train.pricesl}}₹</td>
         {% endif %}
     </tr>
 
@@ -41,14 +42,14 @@ date = {{date}} <br> -->
         <td align = "center">{{train.source}}</td>
         <td align = "center">🚆●---->----●🚆</td>
         <td align = "center">{{train.destination}}</td>
-        <td>|&nbsp;<b>2S</b>&nbsp;<input type = "radio" name = "2S" value = {{train.price}}>&nbsp;{{train.price}}₹</td>
+        <td>|&nbsp;<b>2S</b>&nbsp;●&nbsp;{{train.price2s}}₹</td>
     </tr>
 
     <tr>
         <td align = "center"><b>{{train.arrival}}</b></td>
-        <td align = "center"><input type = "number" name = "no" placeholder="No of tickets" size = "5"></td>
+        <td align = "center">●</td>
         <td align = "center"><b>{{train.departure}}</b></td>
-        <td align = "center"><input type = "submit" name  = "book" value = "Book"></td>
+        <td align = "center"><a href="../inter/?id={{train.id}}&pricesl={{train.pricesl}}&price2s={{train.price2s}}"><input type = "button" name = "book" value = "Book"></a></td>
     </tr>
 
     <tr>
@@ -59,4 +60,5 @@ date = {{date}} <br> -->
     </tr>
     {% endfor %}
 </table>
+</form>
 {% endblock %}

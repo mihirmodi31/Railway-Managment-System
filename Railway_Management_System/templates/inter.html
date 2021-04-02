@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+{% csrf_token %}
+<div class="navbar-nav ml-auto">
+    <a href="../logout" class="fa fa-sign-out nav-item nav-link">&nbsp;Logout</a>&nbsp;&nbsp;
+</div>
+{% else %}
+<div class="navbar-nav ml-auto">
+    {% csrf_token %}
+    <a href="login" class="fa fa-sign-in nav-item nav-link">&nbsp;Login</a>&nbsp;&nbsp;
+    <a href="register" class="fa fa-user nav-item nav-link">&nbsp;Signup</a>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block body %}
+<form action="../info/" method = "get">
+    {% csrf_token %}
+    <table>
+        <br>
+
+        
+        <tr>
+            <td>Enter Date of travelling : </td>
+            <td><input type = "date" name = "dates"></td>
+        </tr>
+
+        <tr>
+            <td>Enter No. of tickets : </td>
+            <td><input type = "number" name = "no" size = "5" placeholder="tickets"></td>
+        </tr>
+
+        <tr>
+            <td>Select type : </td>
+            <td>SL&nbsp;<input type = "radio" name = "type" value = {{pricesl}}>&nbsp;{{pricesl}}₹&nbsp;&nbsp;||&nbsp;&nbsp;
+                2S&nbsp;<input type = "radio" name = "type" value = {{price2s}}>&nbsp;{{price2s}}₹</td>
+        </tr>
+
+        <tr>
+            <td>Enter Names of passangers : </td>
+            <td><input type="text" name="q" placeholder="Enter names separated by comma(,)"></td>
+        </tr>
+
+        <tr>
+            <td>Enter Ages of passangers : </td>
+            <td><input type = "text" name = "age" placeholder="ages separated by coma(,)"></td>
+        </tr>
+
+        <tr>
+            <td colspan = "2" align = "center"><input type="submit" name = "confirm" value = "confirm"></td>
+        </tr>
+    </table>
+</form>
+{% endblock %}

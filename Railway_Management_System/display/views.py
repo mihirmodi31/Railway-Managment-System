@@ -12,3 +12,10 @@ def display(request):
     trains = Trains.objects.all()
 
     return render(request, "display.html", {'trains' : trains, 'src' : source, 'dst' : destination})
+
+def inter(request):
+    trains = Trains.objects.all()
+    ids = request.GET['id']
+    pricesl = request.GET['pricesl']
+    price2s = request.GET['price2s']
+    return render(request, "inter.html", {'trains' : trains, 'ids' : ids, 'pricesl' : pricesl, 'price2s' : price2s})
