@@ -17,21 +17,6 @@
 {% endblock %}
 
 {% block body %}
-<!-- {{age}}
-{{price}}
-{{no}}
-{{q}}
-{{dates}}
-{{tprice}} -->
-
-<!-- {% for train in trains %}
-    {{train.id}}
-    {% if train.pricesl is price or train.price2s is price %}
-        {{train.name}}
-    {% endif %}
-{% endfor %}  -->
-
-<!-- {{train1.name}} -->
 
 <center><h1><u>Your tickets</u></h1></center>
 <a><center><img src="{% static 'images/logo.png' %}" alt="LOGO"></center></a>
@@ -75,6 +60,11 @@
     <tr>
         <td><b>Date : </b></td>
         <td>&nbsp;{{dates}}</td>
+    </tr>
+
+    <tr>
+        <td><b>class : </b></td>
+        <td>&nbsp;{{types}}</td>
     </tr>
 
     <tr>

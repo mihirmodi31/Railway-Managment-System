@@ -10,4 +10,5 @@ class Tickets(models.Model):
 
 class Avail(models.Model):
     pnr = models.CharField(max_length=15)
-    seat = models.IntegerField()
+    seatsl = models.IntegerField()
+    seat2s = models.IntegerField()

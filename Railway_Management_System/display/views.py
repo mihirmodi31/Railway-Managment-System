@@ -19,3 +19,22 @@ def inter(request):
     pricesl = request.GET['pricesl']
     price2s = request.GET['price2s']
     return render(request, "inter.html", {'trains' : trains, 'ids' : ids, 'pricesl' : pricesl, 'price2s' : price2s})
+
+def ab(request):
+    return render(request, "aboutus.html")
+
+def pr(request):
+    return render(request, "project.html")
+
+def fb(request):
+    return render(request, "feedback.html")
+
+def ab1(request):
+    return render(request, "aboutus.html")
+
+def pr1(request):
+    return render(request, "project.html")
+
+def fb1(request):
+    return render(request, "feedback.html")
+
