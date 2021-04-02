@@ -29,13 +29,13 @@ date = {{date}} <br> -->
         <td>—————</td>
     </tr>
     {% for train in trains %}
+    {% if train.source == src or  train.destination == dst %}
     <tr>
-        {% if train.source == src or  train.source == dst%}
             <td> <b>{{ train.pnr }}</b> </td> <td>
             <b>{{train.name}} </b>  </td>
             <td>●Runs on : {{train.day}}</td>
             <td>|&nbsp;<b>SL</b>&nbsp;●&nbsp;{{train.pricesl}}₹</td>
-        {% endif %}
+        
     </tr>
 
     <tr>
@@ -58,6 +58,7 @@ date = {{date}} <br> -->
         <td>—————————</td>
         <td>—————</td>
     </tr>
+    {% endif %}
     {% endfor %}
 </table>
 </form>

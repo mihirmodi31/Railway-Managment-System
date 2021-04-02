@@ -35,7 +35,7 @@
 
 <center><h1><u>Your tickets</u></h1></center>
 <a><center><img src="{% static 'images/logo.png' %}" alt="LOGO"></center></a>
-
+{% if isavail == "yes" %}
 <table align = "center">
     <tr>
         <td><b>Passangers : </b></td>
@@ -76,5 +76,13 @@
         <td><b>Date : </b></td>
         <td>&nbsp;{{dates}}</td>
     </tr>
+
+    <tr>
+        <td><b>Seat no. : </b></td>
+        <td>&nbsp;{{s2}}&nbsp;to&nbsp;{{s1}}</td>
+    </tr>
 </table>
+{% else %}
+    <center><h1>SORRY:(  Tickets are not available</h1></center>
+{% endif %}
 {% endblock %}
