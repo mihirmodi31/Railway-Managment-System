@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'feedback.apps.FeedbackConfig',
     'display.apps.DisplayConfig',
     'info.apps.InfoConfig',
     'django.contrib.admin',

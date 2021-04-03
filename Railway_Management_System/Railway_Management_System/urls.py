@@ -25,4 +25,5 @@ urlpatterns = [
     path('', include('display.urls')),
     path('', include('info.urls')),
     path('', include('seats.urls')),
+    path('', include('feedback.urls')),
 ]
