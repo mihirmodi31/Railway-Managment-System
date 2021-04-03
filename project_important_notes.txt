@@ -1,0 +1,9 @@
+We can book tickets for:
+1) Ahmedabad -> Nadiad
+2) Nadiad -> Ahmedabad
+3) Surat -> Nadiad
+4) Nadiad -> Surat
+
+notes:
+	All trains run only once in a week.
+SO we have to book tickets before one week only.
