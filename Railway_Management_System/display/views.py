@@ -7,7 +7,6 @@ from django.http import HttpResponse
 def display(request):
     source = request.GET['src']
     destination = request.GET['dst']
-    date = request.GET['dates']
 
     trains = Trains.objects.all()
 

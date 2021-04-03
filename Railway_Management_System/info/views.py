@@ -51,6 +51,8 @@ def info(request):
                         types = "sl"
                         x.seatsl = int(x.seatsl) - int(num)
                         x.save()
+                        t = Tickets(date = dates, no = num, total_price = tprice, passangers = q, ages = age)
+                        t.save()
                 elif int(price) == int(train1.price2s):
                     if int(x.seat2s) < int(num):
                         isavail = "no"
@@ -61,8 +63,7 @@ def info(request):
                         types = "2s"
                         x.seat2s = int(x.seat2s) - int(num)
                         x.save()
+                        t = Tickets(date = dates, no = num, total_price = tprice, passangers = q, ages = age)
+                        t.save()
 
-                    # t = Tickets(date = dates, no = num, total_price = tprice, passangers = q, ages = age)
-                    # t.save()            
-        
         return render(request, "info.html", {'train1' : train1, 'age' : age, 'price' : price, 'no' : num, 'q' : q, 'dates' : dates, 'tprice' : tprice, 'isavail' : isavail, 's1' : s1, 's2' : s2, 'types' : types})

@@ -24,4 +24,5 @@ urlpatterns = [
     path('', include('logout.urls')),
     path('', include('display.urls')),
     path('', include('info.urls')),
+    path('', include('seats.urls')),
 ]

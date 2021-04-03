@@ -29,7 +29,7 @@ date = {{date}} <br> -->
         <td>—————</td>
     </tr>
     {% for train in trains %}
-    {% if train.source == src or  train.destination == dst %}
+    {% if train.source == src and  train.destination == dst %}
     <tr>
             <td> <b>{{ train.pnr }}</b> </td> <td>
             <b>{{train.name}} </b>  </td>

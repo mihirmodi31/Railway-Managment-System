@@ -27,16 +27,14 @@
 <br>
 <form action="display/" method = "get">
     {% csrf_token %}
-<table border = "0px" cellpaddind = "2px" cellspacing = "2px">
+<table align = "center" border = "0px" cellpaddind = "2px" cellspacing = "2px">
     <tr>
         <td>Source</td>
         <td>Destination</td>
-        <td>Date</td>
     </tr>
     <tr>
         <td><input type = "text" name = "src" placeholder = "From">&nbsp;⇋&nbsp;</td> 
-        <td><input type = "text" name = "dst" placeholder = "To">&nbsp;*&nbsp;</td>
-        <td><input type = "date" name = "dates"></td> 
+        <td><input type = "text" name = "dst" placeholder = "To">&nbsp;</td>
     </tr>
     <tr>
         <td colspan = "3"><center><input type = "submit" name = "find" value = "find"></center></td>
@@ -45,10 +43,15 @@
 </form>
 {% else %}
 <div class="container-fluid text-center">
-    <div class="gallery">
+    <div class="gallery"><br>
         <img src="{% static 'images/home.jpg' %}" alt="Home" width="1300" height="600">
     </div>
 </div>
+<form action="seats/" method = "get">
+    <br>
+    <center><input type = "password" name = "adpas" placeholder="Enter password, Admin"></center>
+    <center><input type = "submit" name = "admin" value = "Admin Only"></a> </center>
+</form>
 
 {% endif %}
 {% endblock %}

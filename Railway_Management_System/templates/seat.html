@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <br>
+    {% if status == "yes" %}
+        <center><u> <b> available seats are set. Thank you. You can go back.</b> </u></center>
+    {% else %}
+        <center><u> <b> Wrong password.Please go back.</b> </u></center>
+    {% endif %}
+{% endblock %}
